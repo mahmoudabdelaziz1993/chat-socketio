@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<script src="/socket.io/socket.io.js"></script>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <script type="text/javascript">
+    	var socket = io('//localhost:3000');
+        socket.on('socketToMe', function (data) {
+         console.log(data);
+        });
+    </script>
   </body>
 </html>

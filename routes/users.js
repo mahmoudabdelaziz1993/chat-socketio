@@ -3,7 +3,12 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+	res.io.on('connection', function(socket){
+  console.log('a user connected');
+    });
+
+  res.render('index',{title:"index"});
+
 });
 
 module.exports = router;
