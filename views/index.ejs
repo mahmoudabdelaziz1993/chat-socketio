@@ -9,7 +9,7 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <script type="text/javascript">
-    	var socket = io('//localhost:3000');
+    	var socket = io();
         socket.on('socketToMe', function (data) {
          console.log(data);
         });
